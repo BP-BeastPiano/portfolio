@@ -16,13 +16,13 @@ router.post("/add",  async (req, res) => {
 
 // GET
 
-router.get("/", async (res) => {
-    try {
-      const Visits = await Visit.find();
-      res.status(200).json(Visits);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-})
+router.get("/", async (req, res) => {
+  try {
+    const Visits = await Visit.find();
+    res.status(200).json(Visits);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
